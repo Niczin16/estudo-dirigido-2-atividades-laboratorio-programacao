@@ -4,6 +4,7 @@
  */
 package pkg01.atividade.pratica;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +20,7 @@ import javax.swing.JOptionPane;
          */
         public CadastroPessoa() {
             initComponents();
-            
+            setLocationRelativeTo(null);
         }
 
         gerirPessoas gp = new gerirPessoas();
@@ -33,96 +34,150 @@ import javax.swing.JOptionPane;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        pnlFundo = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
+        pnlImg = new javax.swing.JPanel();
+        imgLogo = new javax.swing.JLabel();
+        pgcOptions = new javax.swing.JMenuBar();
+        pgArquivos = new javax.swing.JMenu();
+        optNovo = new javax.swing.JMenuItem();
+        optSair = new javax.swing.JMenuItem();
+        pgRelatorio = new javax.swing.JMenu();
+        pgInfo = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Formulário Cadastro de Pessoa");
         setBackground(new java.awt.Color(255, 255, 102));
         setName("frmPessoa"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 600));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 51));
+        pnlFundo.setBackground(new java.awt.Color(255, 255, 102));
+        pnlFundo.setName("pnlFundo"); // NOI18N
 
-        jLabel1.setBackground(new java.awt.Color(0, 102, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel1.setText("CONTROLE DE CLIENTES");
+        lblTitulo.setBackground(new java.awt.Color(72, 136, 122));
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(72, 136, 122));
+        lblTitulo.setText("CONTROLE DE CLIENTES");
+        lblTitulo.setName("lblTitulo"); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
+        pnlImg.setBackground(new java.awt.Color(72, 136, 122));
+        pnlImg.setName("pnlImg"); // NOI18N
+        pnlImg.setPreferredSize(new java.awt.Dimension(180, 180));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(192, 192, 192))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        imgLogo.setBackground(new java.awt.Color(72, 136, 122));
+        imgLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Aluno\\Downloads\\estudo-dirigido-2-atividades-laboratorio-programacao-main\\02-atividade-pratica\\assets\\logo.png")); // NOI18N
+        imgLogo.setMaximumSize(new java.awt.Dimension(180, 180));
+        imgLogo.setMinimumSize(new java.awt.Dimension(180, 180));
+        imgLogo.setName("imgLogo"); // NOI18N
+        imgLogo.setPreferredSize(new java.awt.Dimension(180, 180));
+        imgLogo.setRequestFocusEnabled(false);
+
+        javax.swing.GroupLayout pnlImgLayout = new javax.swing.GroupLayout(pnlImg);
+        pnlImg.setLayout(pnlImgLayout);
+        pnlImgLayout.setHorizontalGroup(
+            pnlImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlImgLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabel1)
-                .addGap(46, 46, 46)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+        pnlImgLayout.setVerticalGroup(
+            pnlImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBorder(null);
+        javax.swing.GroupLayout pnlFundoLayout = new javax.swing.GroupLayout(pnlFundo);
+        pnlFundo.setLayout(pnlFundoLayout);
+        pnlFundoLayout.setHorizontalGroup(
+            pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFundoLayout.createSequentialGroup()
+                .addContainerGap(199, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(192, 192, 192))
+            .addGroup(pnlFundoLayout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(pnlImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlFundoLayout.setVerticalGroup(
+            pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFundoLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(lblTitulo)
+                .addGap(46, 46, 46)
+                .addComponent(pnlImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
 
-        jMenu1.setText("Arquivo");
-        jMenuBar1.add(jMenu1);
+        pgcOptions.setBorder(null);
+        pgcOptions.setName("pgcOptions"); // NOI18N
 
-        jMenu2.setText("Relatórios");
-        jMenuBar1.add(jMenu2);
+        pgArquivos.setText("Arquivo");
+        pgArquivos.setName("pgArquivos"); // NOI18N
 
-        setJMenuBar(jMenuBar1);
+        optNovo.setText("Novo");
+        optNovo.setName("optNovo"); // NOI18N
+        optNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optNovoActionPerformed(evt);
+            }
+        });
+        pgArquivos.add(optNovo);
+
+        optSair.setText("Sair");
+        optSair.setName("optSair"); // NOI18N
+        pgArquivos.add(optSair);
+
+        pgcOptions.add(pgArquivos);
+
+        pgRelatorio.setText("Relatórios");
+        pgRelatorio.setName("pgRelatorio"); // NOI18N
+        pgcOptions.add(pgRelatorio);
+
+        pgInfo.setText("Informações");
+        pgInfo.setName("pgInfo"); // NOI18N
+        pgcOptions.add(pgInfo);
+
+        setJMenuBar(pgcOptions);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void optNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optNovoActionPerformed
+        NovaPessoa telaCadastro = new NovaPessoa();
+        
+        telaCadastro.setLocationRelativeTo(null);
+        
+        telaCadastro.setVisible(true);
+               
+    }//GEN-LAST:event_optNovoActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel imgLogo;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JMenuItem optNovo;
+    private javax.swing.JMenuItem optSair;
+    private javax.swing.JMenu pgArquivos;
+    private javax.swing.JMenu pgInfo;
+    private javax.swing.JMenu pgRelatorio;
+    private javax.swing.JMenuBar pgcOptions;
+    private javax.swing.JPanel pnlFundo;
+    private javax.swing.JPanel pnlImg;
     // End of variables declaration//GEN-END:variables
 }

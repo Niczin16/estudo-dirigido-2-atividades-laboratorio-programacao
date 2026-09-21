@@ -13,25 +13,50 @@ import java.util.Map;
  */
 public class gerirPessoas {
  
-    private ArrayList<dadosPessoa> pessoas = new ArrayList<>();
+    private ArrayList<Fornecedor> fornecedors = new ArrayList<>();
+    private ArrayList<Cliente> clientes       = new ArrayList<>();
     
-    public String incluirPessoa(dadosPessoa pessoa){
-        pessoas.add(pessoa);        
-        return "Pessoa cadastrada com sucesso!";
+    //{ FORNECEDORES }
+    public String incluirFornecedor(Fornecedor AFornecedor){
+        fornecedors.add(AFornecedor);        
+        return "Fornecedor cadastrada com sucesso!";
     }
     
-    public String listarPessoas(){
-        if (pessoas.isEmpty()){
-            return "Nao existe nenhuma pessoa na lista";
+    //{ CLIENTE }
+    public String incluirCliente(Cliente ACliente){
+        clientes.add(ACliente);        
+        return "Fornecedor cadastrada com sucesso!";
+    }
+    
+    //{ FORNECEDORES }
+    public String listarFornecedores(){
+        if (fornecedors.isEmpty()){
+            return "Nao existe nenhum fornecedor na lista";
         }
         
-        String lPessoa = "";               
+        String lFornecedor = "";               
         
-        for(dadosPessoa p: pessoas){
-            lPessoa += p.dadosCadastrais() + "\n";            
+        for(Fornecedor p: fornecedors){
+            lFornecedor += p.dadosCadastrais() + "\n";            
         }
         
-        return lPessoa;
+        return lFornecedor;
+        
+    }
+    
+    //{ CLIENTE }
+    public String listarCliente(){
+        if (clientes.isEmpty()){
+            return "Nao existe nenhuma cliente na lista";
+        }
+        
+        String lCliente = "";               
+        
+        for(Cliente p: clientes){
+            lCliente += p.dadosCadastrais() + "\n";            
+        }
+        
+        return lCliente;
         
     }
     
