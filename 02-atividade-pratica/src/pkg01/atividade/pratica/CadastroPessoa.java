@@ -66,7 +66,8 @@ import javax.swing.JOptionPane;
         pnlImg.setPreferredSize(new java.awt.Dimension(180, 180));
 
         imgLogo.setBackground(new java.awt.Color(72, 136, 122));
-        imgLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Aluno\\Downloads\\estudo-dirigido-2-atividades-laboratorio-programacao-main\\02-atividade-pratica\\assets\\logo.png")); // NOI18N
+        imgLogo.setIcon(new javax.swing.ImageIcon("E:\\Faculdade\\E.D 2\\Laboratório de programação\\Atividade Pratica 1\\estudo-dirigido-2-atividades-laboratorio-programacao-main\\02-atividade-pratica\\assets\\logo.png")); // NOI18N
+        imgLogo.setToolTipText("");
         imgLogo.setMaximumSize(new java.awt.Dimension(180, 180));
         imgLogo.setMinimumSize(new java.awt.Dimension(180, 180));
         imgLogo.setName("imgLogo"); // NOI18N
@@ -77,10 +78,10 @@ import javax.swing.JOptionPane;
         pnlImg.setLayout(pnlImgLayout);
         pnlImgLayout.setHorizontalGroup(
             pnlImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlImgLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlImgLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(imgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnlImgLayout.setVerticalGroup(
             pnlImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,6 +128,11 @@ import javax.swing.JOptionPane;
 
         optSair.setText("Sair");
         optSair.setName("optSair"); // NOI18N
+        optSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optSairActionPerformed(evt);
+            }
+        });
         pgArquivos.add(optSair);
 
         pgcOptions.add(pgArquivos);
@@ -163,6 +169,26 @@ import javax.swing.JOptionPane;
         telaCadastro.setVisible(true);
                
     }//GEN-LAST:event_optNovoActionPerformed
+
+    private void optSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optSairActionPerformed
+
+        Object[] options = {"Sim", "Não"};
+       
+        int resposta = JOptionPane.showOptionDialog(
+            rootPane, 
+            "Tem certeza que deseja sair?", // Mensagem interna
+            "Confirmar Saída",              // Título da janela
+            JOptionPane.YES_NO_OPTION,      // Tipo de botões (padrão Sim/Não)
+            JOptionPane.QUESTION_MESSAGE,   // Ícone padrão de pergunta
+            null,                           // Ícone personalizado (null usa o padrão)
+            options,                        // Array com os textos dos botões
+            options[0]                      // Botão focado por padrão (Sim)
+        );
+       
+        if (resposta == 0) {
+            System.exit(0); 
+        }
+    }//GEN-LAST:event_optSairActionPerformed
 
     /**
      * @param args the command line arguments

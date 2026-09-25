@@ -10,7 +10,7 @@ package pkg01.atividade.pratica;
  */
 public class Cliente extends dadosPessoa{
 
-    public Cliente() {
+    public Cliente(String CPF, String Nome, String Endereco, String Estado, String Cargo) {
         super(null, null, null, null, null);
     }
     

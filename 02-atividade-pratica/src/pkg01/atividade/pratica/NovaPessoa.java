@@ -4,6 +4,8 @@
  */
 package pkg01.atividade.pratica;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno
@@ -13,9 +15,13 @@ public class NovaPessoa extends javax.swing.JFrame {
     /**
      * Creates new form CadastrarPessoa
      */
+    
+    gerirPessoas FGerirPessoas = new gerirPessoas();
+    
     public NovaPessoa() {
         initComponents();
-        this.setSize(600, 400);             
+        this.setSize(600, 400);  
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -31,16 +37,17 @@ public class NovaPessoa extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         cbbTipoPessoa = new javax.swing.JComboBox<>();
         lblTipoPessoa = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        edtCPF = new javax.swing.JTextField();
+        lblCPF = new javax.swing.JLabel();
+        edtNome = new javax.swing.JTextField();
+        lblEndereco = new javax.swing.JLabel();
+        edtEndereco = new javax.swing.JTextField();
+        lblNome = new javax.swing.JLabel();
+        edtEstado = new javax.swing.JTextField();
+        lblEstado = new javax.swing.JLabel();
+        edtCargo = new javax.swing.JTextField();
+        lblCargo = new javax.swing.JLabel();
+        btCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 400));
@@ -58,25 +65,47 @@ public class NovaPessoa extends javax.swing.JFrame {
         lblTitulo.setName("lblTitulo"); // NOI18N
 
         cbbTipoPessoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Indefinido", "Fornecedor", "Cliente" }));
+        cbbTipoPessoa.setName("cbbTipoPessoa"); // NOI18N
 
         lblTipoPessoa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTipoPessoa.setText("Tipo Pessoa:");
         lblTipoPessoa.setName("lblTipoPessoa"); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("CPF:");
+        edtCPF.setName("edtCPF"); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Endereço:");
+        lblCPF.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCPF.setText("CPF:");
+        lblCPF.setName("lblCPF"); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Nome:");
+        edtNome.setName("edtNome"); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Estado:");
+        lblEndereco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEndereco.setText("Endereço:");
+        lblEndereco.setName("lblEndereco"); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Cargo:");
+        edtEndereco.setName("edtEndereco"); // NOI18N
+
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNome.setText("Nome:");
+        lblNome.setName("lblNome"); // NOI18N
+
+        edtEstado.setName("edtEstado"); // NOI18N
+
+        lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEstado.setText("Estado:");
+        lblEstado.setName("lblEstado"); // NOI18N
+
+        lblCargo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCargo.setText("Cargo:");
+        lblCargo.setName("lblCargo"); // NOI18N
+
+        btCadastrar.setText("Cadastrar");
+        btCadastrar.setName("btCadastrar"); // NOI18N
+        btCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlFundoLayout = new javax.swing.GroupLayout(pnlFundo);
         pnlFundo.setLayout(pnlFundoLayout);
@@ -86,23 +115,24 @@ public class NovaPessoa extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField3)
+                        .addComponent(edtEndereco)
                         .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lblTitulo)
                                 .addComponent(cbbTipoPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblTipoPessoa)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addComponent(jTextField2))
-                            .addComponent(jLabel3)))
-                    .addComponent(jLabel4))
+                                .addComponent(edtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                                .addComponent(lblCPF)
+                                .addComponent(edtNome))
+                            .addComponent(lblEndereco)))
+                    .addComponent(lblNome))
                 .addGap(57, 57, 57)
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
+                    .addComponent(lblCargo)
+                    .addComponent(lblEstado)
+                    .addComponent(edtCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                    .addComponent(edtEstado)
+                    .addComponent(btCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         pnlFundoLayout.setVerticalGroup(
@@ -116,25 +146,27 @@ public class NovaPessoa extends javax.swing.JFrame {
                 .addComponent(cbbTipoPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
+                    .addComponent(lblCPF)
+                    .addComponent(lblEstado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6))
+                    .addComponent(lblNome)
+                    .addComponent(lblCargo))
                 .addGap(3, 3, 3)
                 .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
-                .addComponent(jLabel3)
+                .addComponent(lblEndereco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGroup(pnlFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCadastrar))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,12 +178,109 @@ public class NovaPessoa extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                .addComponent(pnlFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+       if (cbbTipoPessoa.getSelectedIndex() == 0){
+           JOptionPane.showMessageDialog(this, "O campo tipo pessoa é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+           cbbTipoPessoa.requestFocus();
+           return;
+       }
+       
+       if (edtCPF.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this, "O campo CPF é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+           edtCPF.requestFocus();
+           return;          
+       }
+       
+       if (edtNome.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this, "O campo nome é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);;
+           edtNome.requestFocus();
+           return;
+       }
+       
+       if (edtEndereco.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this, "O campo endereço é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+           edtEndereco.requestFocus();
+           return;
+       }
+       
+       if (edtEstado.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this, "O campo estado é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+           edtEstado.requestFocus();
+           return;          
+       }
+       
+       if (lblCargo.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this, "O campo cargo é obrigatório!", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+           lblCargo.requestFocus();
+           return;
+       }
+       
+       if (cbbTipoPessoa.getSelectedIndex() == 1){
+           
+          String CPF      = edtCPF.getText();
+          String Nome     = edtNome.getText();
+          String Endereco = edtEndereco.getText();
+          String Estado   = edtEstado.getText();
+          String Cargo    = edtCargo.getText();
+                  
+          Fornecedor fornecedor = new Fornecedor(
+                 CPF, 
+                 Nome,
+                 Endereco,
+                 Estado, 
+                 Cargo
+          );
+           
+          FGerirPessoas.incluirFornecedor(fornecedor);
+          
+          cbbTipoPessoa.setSelectedIndex(0);
+          edtCPF.setText("");
+          edtNome.setText("");
+          edtEndereco.setText("");
+          edtEstado.setText("");
+          edtCargo.setText("");
+          
+          JOptionPane.showMessageDialog(this, "Fornecedor cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE); 
+       } else {
+           
+          String CPF      = edtCPF.getText();
+          String Nome     = edtNome.getText();
+          String Endereco = edtEndereco.getText();
+          String Estado   = edtEstado.getText();
+          String Cargo    = edtCargo.getText();
+                  
+          Cliente cliente = new Cliente(
+                 CPF, 
+                 Nome,
+                 Endereco,
+                 Estado, 
+                 Cargo
+          );
+           
+          FGerirPessoas.incluirCliente(cliente);
+          
+          cbbTipoPessoa.setSelectedIndex(0);
+          edtCPF.setText("");
+          edtNome.setText("");
+          edtEndereco.setText("");
+          edtEstado.setText("");
+          edtCargo.setText("");
+          
+          JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE); 
+       }
+       
+
+       
+       
+       
+    }//GEN-LAST:event_btCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,17 +319,18 @@ public class NovaPessoa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCadastrar;
     private javax.swing.JComboBox<String> cbbTipoPessoa;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField edtCPF;
+    private javax.swing.JTextField edtCargo;
+    private javax.swing.JTextField edtEndereco;
+    private javax.swing.JTextField edtEstado;
+    private javax.swing.JTextField edtNome;
+    private javax.swing.JLabel lblCPF;
+    private javax.swing.JLabel lblCargo;
+    private javax.swing.JLabel lblEndereco;
+    private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTipoPessoa;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlFundo;
