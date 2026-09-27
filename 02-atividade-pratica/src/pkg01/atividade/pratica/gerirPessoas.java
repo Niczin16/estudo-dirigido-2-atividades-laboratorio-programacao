@@ -24,7 +24,7 @@ public class gerirPessoas {
     
     //{ CLIENTE }
     public String incluirCliente(Cliente ACliente){
-        clientes.add(ACliente);        
+        clientes.add(ACliente);
         return "Fornecedor cadastrada com sucesso!";
     }
     

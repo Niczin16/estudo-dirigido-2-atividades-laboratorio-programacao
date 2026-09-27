@@ -41,12 +41,32 @@
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
             <Property name="name" type="java.lang.String" value="pgRelatorio" noResource="true"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="optListarPessoas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar Pessoas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optListarPessoasActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="pgInfo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es"/>
             <Property name="name" type="java.lang.String" value="pgInfo" noResource="true"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="optInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sobre"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optInfoActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

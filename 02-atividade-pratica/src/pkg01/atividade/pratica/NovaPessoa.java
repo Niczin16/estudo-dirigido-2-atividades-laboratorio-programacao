@@ -16,9 +16,14 @@ public class NovaPessoa extends javax.swing.JFrame {
      * Creates new form CadastrarPessoa
      */
     
-    gerirPessoas FGerirPessoas = new gerirPessoas();
+    private gerirPessoas FGerirPessoas;
     
     public NovaPessoa() {
+        this(new gerirPessoas());   
+    }
+    
+    public NovaPessoa(gerirPessoas gerir) {
+        this.FGerirPessoas = gerir;
         initComponents();
         this.setSize(600, 400);  
         setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
@@ -274,17 +279,22 @@ public class NovaPessoa extends javax.swing.JFrame {
           edtCargo.setText("");
           
           JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE); 
-       }
-       
-
-       
-       
+       }                     
        
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
+    public String ListarFornecedores(){
+        return FGerirPessoas.listarFornecedores();
+    }
+    
+    public String ListarClientes(){
+        return FGerirPessoas.listarCliente();
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -43,7 +43,9 @@ import javax.swing.JOptionPane;
         optNovo = new javax.swing.JMenuItem();
         optSair = new javax.swing.JMenuItem();
         pgRelatorio = new javax.swing.JMenu();
+        optListarPessoas = new javax.swing.JMenuItem();
         pgInfo = new javax.swing.JMenu();
+        optInfo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Formulário Cadastro de Pessoa");
@@ -139,10 +141,28 @@ import javax.swing.JOptionPane;
 
         pgRelatorio.setText("Relatórios");
         pgRelatorio.setName("pgRelatorio"); // NOI18N
+
+        optListarPessoas.setText("Listar Pessoas");
+        optListarPessoas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optListarPessoasActionPerformed(evt);
+            }
+        });
+        pgRelatorio.add(optListarPessoas);
+
         pgcOptions.add(pgRelatorio);
 
         pgInfo.setText("Informações");
         pgInfo.setName("pgInfo"); // NOI18N
+
+        optInfo.setText("Sobre");
+        optInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optInfoActionPerformed(evt);
+            }
+        });
+        pgInfo.add(optInfo);
+
         pgcOptions.add(pgInfo);
 
         setJMenuBar(pgcOptions);
@@ -162,7 +182,7 @@ import javax.swing.JOptionPane;
     }// </editor-fold>//GEN-END:initComponents
 
     private void optNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optNovoActionPerformed
-        NovaPessoa telaCadastro = new NovaPessoa();
+        NovaPessoa telaCadastro = new NovaPessoa(gp);
         
         telaCadastro.setLocationRelativeTo(null);
         
@@ -190,6 +210,22 @@ import javax.swing.JOptionPane;
         }
     }//GEN-LAST:event_optSairActionPerformed
 
+    private void optListarPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optListarPessoasActionPerformed
+        ListarPessoas listarPessoas = new ListarPessoas(gp);
+        
+        listarPessoas.setLocationRelativeTo(null);
+        
+        listarPessoas.setVisible(true);
+    }//GEN-LAST:event_optListarPessoasActionPerformed
+
+    private void optInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optInfoActionPerformed
+        Sobre s = new Sobre();
+        
+        s.setLocationRelativeTo(null);
+        
+        s.setVisible(true);
+    }//GEN-LAST:event_optInfoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,6 +233,8 @@ import javax.swing.JOptionPane;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JMenuItem optInfo;
+    private javax.swing.JMenuItem optListarPessoas;
     private javax.swing.JMenuItem optNovo;
     private javax.swing.JMenuItem optSair;
     private javax.swing.JMenu pgArquivos;
