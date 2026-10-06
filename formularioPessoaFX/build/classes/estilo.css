@@ -1,0 +1,35 @@
+.formulario {
+    -fx-background-color: #f0f0f0;
+    -fx-font-size: 13px;
+}
+
+.label {
+    -fx-text-fill: #222222;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #a0a0a0;
+    -fx-border-radius: 2;
+}
+
+.text-field:focused {
+    -fx-border-color: #3c7fb1;
+}
+
+.combo-box {
+    -fx-background-color: #e1e1e1;
+    -fx-border-color: #a0a0a0;
+    -fx-border-radius: 2;
+}
+
+.button {
+    -fx-background-color: #e1e1e1;
+    -fx-border-color: #3c7fb1;
+    -fx-border-radius: 2;
+    -fx-padding: 5 15 5 15;
+}
+
+.button:hover {
+    -fx-background-color: #d4e6f5;
+}
